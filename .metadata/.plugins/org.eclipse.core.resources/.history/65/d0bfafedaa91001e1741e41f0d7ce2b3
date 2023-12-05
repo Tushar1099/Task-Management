@@ -1,0 +1,60 @@
+package com.casestudy.expertiseservice.serviceimpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.casestudy.expertiseservice.dto.ExpertiseDto;
+import com.casestudy.expertiseservice.entity.Expertise;
+import com.casestudy.expertiseservice.repo.ExpertiseRepo;
+import com.casestudy.expertiseservice.service.ExpertiseService;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class ExpertiseServiceImpl implements ExpertiseService{
+
+	private ExpertiseRepo exptRepo;
+	
+	private ModelMapper modelMapper;
+
+//	Create expertise
+	@Override
+	public ExpertiseDto createExpertise(ExpertiseDto exptDto) {
+		Expertise expt = modelMapper.map(exptDto, Expertise.class);
+		Expertise savedExpt = exptRepo.save(expt);
+		ExpertiseDto savedExptDto = modelMapper.map(savedExpt, ExpertiseDto.class);
+		return savedExptDto;
+	}
+
+//	Get expertise by id
+	@Override
+	public ExpertiseDto getExpertiseById(Long exptId) {
+		Optional<Expertise> foundId = exptRepo.findById(exptId);
+		return modelMapper.map(foundId, ExpertiseDto.class);
+	}
+
+//	Get all expertise 
+	@Override
+	public List<ExpertiseDto> getAllExpertise() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	Update expertise by id
+	@Override
+	public ExpertiseDto updateExpertise(ExpertiseDto exptDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	Delete expertise by id
+	@Override
+	public void deleteExpertise(Long exptDto) {
+		// TODO Auto-generated method stub
+		
+	}
+}

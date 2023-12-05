@@ -1,0 +1,5 @@
+package com.casestudy.expertiseservice.entity;
+
+public class Expertise {
+
+}

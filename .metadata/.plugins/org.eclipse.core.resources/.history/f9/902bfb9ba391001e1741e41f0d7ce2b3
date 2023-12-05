@@ -1,0 +1,5 @@
+package com.casestudy.expertiseservice.dto;
+
+public class ExpertiseDto {
+
+}

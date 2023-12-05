@@ -1,0 +1,5 @@
+package com.casestudy.formservice.entity;
+
+public class Form {
+
+}

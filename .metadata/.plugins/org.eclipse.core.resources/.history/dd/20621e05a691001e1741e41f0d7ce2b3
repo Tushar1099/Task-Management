@@ -1,0 +1,5 @@
+package com.casestudy.expertiseservice.service;
+
+public interface ExpertiseService {
+
+}
